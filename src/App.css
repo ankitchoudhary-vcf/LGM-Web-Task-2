@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.main {
+  overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to right bottom, #f38a2d, #ef9c1b, #e7af03, #dbc200, #cbd407, #b5e035, #9deb55, #82f574, #65f99b, #4efbbe, #4bfcdb, #5ffbf1);
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 10px;
+  background: linear-gradient(to right top, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+  backdrop-filter: blur(2rem);
+  z-index: 3;
+}
+
+.navbar-logo {
+  font-size: calc(12px + 2vmin);
+  font-weight: 800;
+  display: flex;
   justify-content: center;
+  align-content: center;
+}
+
+.navbar-button {
   font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #0c95f0;
+  padding: 5px 10px;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-button:hover {
+  animation: fade 2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.users {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+  flex-flow: wrap;
+  min-height: 50vh;
+  padding: 30px 0px;
+  margin: 0px 10%;
+  z-index: 3;
+}
+
+.message {
+  font-size: calc(12px + 2vmin);
+  font-weight: 600;
+}
+
+.loader {
+  opacity: 0.3;
+  align-self: center;
+  height: 500px;
+  border-radius: 2rem;
+}
+
+.user {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(to right bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
+  backdrop-filter: blur(2rem);
+  border-radius: 2rem;
+  padding: 10px;
+  margin: 10px;
+  min-width: 250px;
+  cursor: pointer;
+}
+
+.user-profile {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+}
+
+.user-profile img {
+  border-radius: 50%;
+}
+
+.user-about {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  line-height: 30px;
+  margin: 5px 0px;
+}
+
+.text {
+  margin: 0px 5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.text i {
+  margin-right: 5px;
+}
+
+.circle {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.circle li {
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: linear-gradient(to left top, rgba(255,255,255,0.9), rgba(255,255,255,0.3));
+  animation: animate 20s linear infinite;
+  opacity: 0;
+}
+.circle li:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+.circle li:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.circle li:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+  animation-duration: 5.5s;
+}
+.circle li:nth-child(4) {
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.circle li:nth-child(5) {
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.circle li:nth-child(6) {
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-90vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    background: #0c95f0;
+  }
+  50% {
+    background: #08b1e4;
+  }
+  100% {
+    background: #0c23f0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .loader {
+    height: 400px;
+    opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .loader {
+    height: 300px;
+    opacity: 0.5;
   }
 }
