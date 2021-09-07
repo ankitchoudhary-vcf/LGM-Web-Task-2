@@ -34,7 +34,7 @@ function Navbar(props: any): JSX.Element {
       <div className="navbar-logo">LetsGrowMore</div>
       <button className="navbar-button" onClick={() => {
         props.setLoading(true)
-        setTimeout(getData, 5000)
+        setTimeout(getData, 1000)
       }}>
         Get Users
       </button>
